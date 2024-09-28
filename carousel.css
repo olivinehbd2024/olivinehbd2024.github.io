@@ -1,0 +1,180 @@
+/* 輪播容器樣式 */
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+/* 當前顯示的圖片 */
+.slide-item.active {
+    opacity: 1;
+    max-width: 600px;
+    width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+}
+.slide-item p{
+display:none;
+}
+
+.slide-item.active p{
+    display:block;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    background: linear-gradient(to right,transparent, #93a770, transparent);
+    
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.carousel-image {
+
+    width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+
+.image-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #333;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -22px;
+    color:  rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background: transparent;
+    border: none;
+    z-index: 1;
+    
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    color: #5ea821;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    z-index: 1;
+  position: relative;
+  display: none;
+
+}
+
+.thumbnail {
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+    margin: 0 5px;
+    cursor: pointer;
+    background: #8b8b8b;
+    border-radius: 100%;
+}
+
+.thumbnail.active {
+    background: #5ea821;
+}
+
+/* 燈箱樣式 */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    object-fit: contain;
+    height: 95%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+}
+
+.imageclose {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.lightbox-prev, .lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    border: none;
+    background: transparent;
+    z-index: 1;
+}
+
+.lightbox-prev {
+    left: 0;
+}
+
+.lightbox-next {
+    right: 0;
+}
+
+
+
+
+
